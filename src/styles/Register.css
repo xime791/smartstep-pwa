@@ -1,0 +1,151 @@
+/* Fondo gris claro para toda la página */
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  /* Contenedor principal para el registro: similar al Login */
+  .register-container {
+    width: 55vw;
+    height: 80vh;
+    margin: auto;
+    display: flex;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Contenedor izquierdo: utiliza la imagen de fondo */
+  .register-left {
+    width: 50%;
+    background: url("../images/img-waves.png") no-repeat center center;
+    background-size: cover;
+    position: relative;
+  }
+  
+  /* Contenedor interno en el register-left: cuadrado con fondo blanco semitransparente */
+  .register-left-inner {
+    width: 75%;
+    aspect-ratio: 1;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  /* Texto en el contenedor izquierdo */
+  .welcome-text {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bolder;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .sub-welcome-text {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 0.5rem 0 0;
+    text-align: left;
+  }
+  
+  /* Contenedor derecho: ocupa el 50% y fondo blanco */
+  .register-right {
+    width: 50%;
+    background-color: #ffffff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Logo en la parte superior del contenedor derecho */
+  .register-right-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 0;
+  }
+  
+  /* Título para la sección de registro */
+  .register-right h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Estilos para los campos de entrada */
+  .register-input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* Estilo para el botón Crear cuenta */
+  .register-button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  /* Estilo para el botón Inicia sesión aquí */
+  .login-here-button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: transparent;
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  /* Responsividad para pantallas menores a 768px */
+  @media (max-width: 768px) {
+    .register-container {
+      width: 90vw;
+      height: auto;
+      flex-direction: column;
+      margin: 2rem auto;
+    }
+    
+    .register-left,
+    .register-right {
+      width: 100%;
+    }
+    
+    /* Ocultar el contenedor izquierdo en móviles */
+    .register-left {
+      display: none;
+    }
+  }
+  
+  /* Responsividad para pantallas menores a 1120px para ajustar los textos */
+  @media (max-width: 1120px) {
+    .welcome-text {
+      font-size: 1.5rem;
+    }
+    .register-right h2 {
+      font-size: 1.5rem;
+    }
+  }
+  

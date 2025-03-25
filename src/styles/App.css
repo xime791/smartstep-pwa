@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Contenedor principal */
+.app-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 13vh;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-height: 20vh;
+  width: auto;
+}
+
+/* Botones centrales */
+.navbar-section-buttons {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 3vw;
+}
+
+.section-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #000;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.section-button:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #00aaff;
+  bottom: 0;
+  left: 0;
+}
+
+/* Botones de autenticación */
+.navbar-buttons {
+  display: flex;
+  gap: 1vw;
+}
+
+.auth-button.login {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.auth-button.register {
+  background-color: #005077;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Contenedor de secciones */
+.sections {
+  margin-top: 13vh;
+}
+
+/* Cada sección */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sección 1 */
+#section1 {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+.section1-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+  gap: 20px;
+}
+
+.section1-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section1-image img {
+  max-width: 33vw;
+  height: auto;
+}
+
+.section1-content {
+  flex: 1;
+  padding: 5%;
+}
+
+.section1-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.section1-title .smart {
+  color: #00aaff;
+}
+
+.section1-title .step {
+  color: #343434;
+}
+
+.section1-text {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Sección 2 */
+#section2 {
+  width: 100vw;
+  height: 80vh;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section2-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.section2-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+.section2-box {
+  width: 25vw;
+  height: 45vh;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Centrado */
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid #00aaff;
+  padding: 1rem;
+}
+
+.section2-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.box-icon {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.section2-box:hover .box-icon {
+  transform: scale(1.2);
+}
+
+.box-line {
+  width: 80%;
+  height: 3px;
+  background-color: #00aaff;
+  margin-bottom: 10px;
+}
+
+.box-text {
+  font-size: 16px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+/* Sección 3 */
+#section3 {
+  width: 100vw;
+  height: 85vh;
+  background: url("../images/img-seccion3.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section3-container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 1rem;
+}
+
+.section3-text {
+  font-size: 3rem;
+  color: #fff;
+  font-family: 'Dancing Script', cursive;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+/* Sección 4: Contacto */
+#section4 {
+  width: 100vw;
+  height: 55vh;
+  background-color: #101010;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.section4-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Por defecto, alinear cada columna a la izquierda */
+.section4-left,
+.section4-right {
+  flex: 1;
+  padding: 1rem;
+  text-align: left;
+}
+.section4-center {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  justify-items: center;
+}
+
+/* En escritorio, cada columna ocupa 33.33% */
+.section4-left,
+.section4-center,
+.section4-right {
+  width: 33.33%;
+}
+
+/* Sección 4 – Títulos y textos */
+.section4-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.section4-left-text,
+.section4-right-text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.section4-links a {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.section4-links a:hover {
+  text-decoration: underline;
+}
+
+.link-icon {
+  width: 20px;
+  height: auto;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Media Queries para pantallas menores a 768px */
+@media (max-width: 768px) {
+  /* Navbar ajustes */
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+  
+  .navbar-logo {
+    margin-bottom: 10px;
+  }
+  
+  .navbar-section-buttons {
+    position: static;
+    transform: none;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+  
+  .section-button {
+    font-size: 14px;
+  }
+  
+  .navbar-buttons {
+    gap: 5px;
+  }
+  
+  .sections {
+    margin-top: 25vh;
+  }
+  
+  /* Sección 1: Alineación vertical para imagen y texto */
+  .section1-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .section1-title {
+    font-size: 36px;
+  }
+  
+  .section1-text {
+    font-size: 16px;
+  }
+  
+  #section1 {
+    padding-top: 5rem;
+  }
+  
+  /* Sección 2: Ajuste para que la altura se adapte al contenido */
+  #section2 {
+    height: auto;
+    margin-top: 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  .section2-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .section2-box {
+    width: 90vw;
+    height: auto;
+    padding: 1rem;
+  }
+  
+  .section2-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Sección 3 */
+  #section3 {
+    height: 85vh;
+  }
+  
+  .section3-text {
+    font-size: 2.5rem;
+    padding: 0 1rem;
+  }
+  
+  /* Sección 4: Para móviles, la disposición se ajusta */
+  .section4-container {
+    flex-direction: column;
+  }
+  
+  /* La columna izquierda (Misión) ocupa toda la fila */
+  .section4-left,
+  .section4-center,
+  .section4-right {
+    width: 100%;
+    margin-bottom: 1rem;
+ 
+  }
+  
+  .section4-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .section4-left-text,
+  .section4-right-text {
+    font-size: 0.9rem;
+  }
+  
+  .section4-links a {
+    font-size: 0.9rem;
+  }
+}

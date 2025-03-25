@@ -1,0 +1,150 @@
+/* Fondo gris claro para toda la página */
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Contenedor principal para el login: 55vw x 75vh, centrado */
+.login-container {
+  width: 55vw;
+  height: 75vh;
+  margin: auto;
+  display: flex;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor izquierdo: utiliza la imagen de fondo */
+.login-left {
+  width: 50%;
+  background: url("../images/img-waves.png") no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+/* Contenedor interno en el login-left: cuadrado con fondo blanco semitransparente */
+.login-left-inner {
+  width: 75%;
+  aspect-ratio: 1;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alineado a la izquierda */
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Texto en el contenedor izquierdo */
+.welcome-text {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: bolder;
+  margin: 0;
+  text-align: left;
+}
+
+.sub-welcome-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0.5rem 0 0;
+  text-align: left;
+}
+
+/* Contenedor derecho: ocupa el 50% del ancho y fondo blanco */
+.login-right {
+  width: 50%;
+  background-color: #ffffff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo en la parte superior del contenedor derecho */
+.login-right-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Título para la sección de login */
+.login-right h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+/* Estilos para los campos de entrada */
+.login-right .login-input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Estilos para el botón Acceder */
+.login-right .login-button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* Estilos para el botón Regístrate aquí */
+.register-here-button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #333;
+  border: 2px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* Responsividad para pantallas menores a 768px */
+@media (max-width: 768px) {
+  .login-container {
+    width: 90vw;
+    height: auto;
+    flex-direction: column;
+    margin: 2rem auto;
+  }
+  
+  .login-left,
+  .login-right {
+    width: 100%;
+  }
+  
+  /* Ocultar el contenedor izquierdo en móviles */
+  .login-left {
+    display: none;
+  }
+}
+
+/* Responsividad para pantallas menores a 1120px para ajustar los textos */
+@media (max-width: 1120px) {
+  .welcome-text {
+    font-size: 1.5rem;
+  }
+  .login-right h2 {
+    font-size: 1.5rem;
+  }
+}
