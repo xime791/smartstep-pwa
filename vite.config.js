@@ -5,12 +5,12 @@ import { configDefaults } from 'vitest/config';
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    port: 5173, 
-    hmr: {
-      host: 'localhost', 
-    },
+  build: {
+    outDir: 'build' ,// Cambia la carpeta de salida a 'build'
   },
+  server:{
+  port: 3000,
+},
   test: {
     globals: true,
     environment: 'jsdom',

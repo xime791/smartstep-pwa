@@ -1,9 +1,34 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const webpush = require('web-push');
-const keys = require('../src/keys.json');
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import { fileURLToPath } from 'url';
+import path from 'path';
+import bodyParser from 'body-parser';
+import webpush from 'web-push';
+import fs from 'fs';
+
+// Obtener __dirname en ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Cargar claves VAPID desde JSON o variables de entorno
+let keys = {};
+try {
+  const keysPath = path.resolve('src/keys.json');
+  keys = JSON.parse(fs.readFileSync(keysPath, 'utf8'));
+} catch (error) {
+  console.error('No se pudo cargar keys.json. Usando variables de entorno.');
+}
+
+// Configurar claves de web-push
+const publicKey = process.env.VAPID_PUBLIC_KEY || keys.publicKey;
+const privateKey = process.env.VAPID_PRIVATE_KEY || keys.privateKey;
+
+if (!publicKey || !privateKey) {
+  console.error('ERROR: Claves VAPID no encontradas.');
+  process.exit(1);
+}
+webpush.setVapidDetails('mailto:prueba@gmail.com', publicKey, privateKey);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -105,8 +130,17 @@ app.post('/sendPush/:id', async (req, res) => {
     res.status(500).json({ mensaje: "No se pudo enviar la notificación", details: error.message });
   }
 });
+// Servir archivos estáticos de React
+const clientBuildPath = path.join(__dirname, '../../build');
+if (fs.existsSync(clientBuildPath)) {
+  app.use(express.static(clientBuildPath));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(clientBuildPath, 'index.html'));
+  });
+} else {
+  console.error('Error: No se encontró la carpeta build. Asegúrate de que Vite generó la carpeta correctamente.');
+}
 
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`);
 
-}); 
+// Iniciar servidor
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
