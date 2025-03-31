@@ -15,9 +15,15 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
+    "body-parser": "^1.20.3",
     "chart.js": "^4.4.8",
     "chartjs-adapter-date-fns": "^3.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
     "lucide-react": "^0.479.0",
+    "mongoose": "^7.8.6",
+    "path": "^0.12.7",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.3.0",
     "react-datepicker": "^8.2.0",
@@ -44,7 +50,7 @@
     "jsdom": "^26.0.0",
     "vite": "^6.0.5",
     "vitest": "^3.0.9"
-  }, 
+  },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "eslint.config.js",
   "keywords": [],
